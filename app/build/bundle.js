@@ -94,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return App; });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _components_Logo___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Logo/ */ \"./app/src/components/Logo/index.jsx\");\n/* harmony import */ var _components_Link___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Link/ */ \"./app/src/components/Link/index.jsx\");\n/* harmony import */ var _assets_electron_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./assets/electron.png */ \"./app/src/assets/electron.png\");\n/* harmony import */ var _assets_electron_png__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_assets_electron_png__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var _assets_react_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./assets/react.png */ \"./app/src/assets/react.png\");\n/* harmony import */ var _assets_react_png__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_assets_react_png__WEBPACK_IMPORTED_MODULE_5__);\n/* harmony import */ var _assets_webpack_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./assets/webpack.png */ \"./app/src/assets/webpack.png\");\n/* harmony import */ var _assets_webpack_png__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_assets_webpack_png__WEBPACK_IMPORTED_MODULE_6__);\n/* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! socket.io-client */ \"./node_modules/socket.io-client/lib/index.js\");\n/* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(socket_io_client__WEBPACK_IMPORTED_MODULE_7__);\n\n\n\n\n\n\n\n\n\n\nconst socket = socket_io_client__WEBPACK_IMPORTED_MODULE_7___default()(\"http://127.0.0.1:3000\");\n\nconst logos = [_assets_electron_png__WEBPACK_IMPORTED_MODULE_4___default.a, _assets_react_png__WEBPACK_IMPORTED_MODULE_5___default.a, _assets_webpack_png__WEBPACK_IMPORTED_MODULE_6___default.a];\n\nclass App extends react__WEBPACK_IMPORTED_MODULE_0__[\"Component\"] {\n\n    componentDidMount() {\n        socket.on(\"connect\", () => console.log('Client: connect'));\n    }\n    sayHi() {\n        console.log('Hi');\n        socket.emit('chat message', 'Hello From Client');\n    }\n\n    render() {\n\n        const logosRender = logos.map((logo, index) => {\n            return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Logo___WEBPACK_IMPORTED_MODULE_2__[\"default\"], { key: index, src: logo });\n        });\n\n        socket.on('chat message', function (msg) {\n\n            console.log(msg);\n        });\n\n        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n            'div',\n            null,\n            logosRender,\n            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n                'div',\n                { className: 'hello' },\n                react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n                    'button',\n                    { onClick: this.sayHi },\n                    'Hello React!'\n                )\n            )\n        );\n    }\n}\n\n//# sourceURL=webpack:///./app/src/App.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return App; });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _components_Logo___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Logo/ */ \"./app/src/components/Logo/index.jsx\");\n/* harmony import */ var _assets_electron_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/electron.png */ \"./app/src/assets/electron.png\");\n/* harmony import */ var _assets_electron_png__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_assets_electron_png__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _assets_react_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./assets/react.png */ \"./app/src/assets/react.png\");\n/* harmony import */ var _assets_react_png__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_assets_react_png__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _assets_webpack_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./assets/webpack.png */ \"./app/src/assets/webpack.png\");\n/* harmony import */ var _assets_webpack_png__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_assets_webpack_png__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! socket.io-client */ \"./node_modules/socket.io-client/lib/index.js\");\n/* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(socket_io_client__WEBPACK_IMPORTED_MODULE_5__);\n\n\n\n\n\n\n\n\nconst socket = socket_io_client__WEBPACK_IMPORTED_MODULE_5___default()(\"http://127.0.0.1:3000\");\n\nconst logos = [_assets_electron_png__WEBPACK_IMPORTED_MODULE_2___default.a, _assets_react_png__WEBPACK_IMPORTED_MODULE_3___default.a, _assets_webpack_png__WEBPACK_IMPORTED_MODULE_4___default.a];\n\nclass App extends react__WEBPACK_IMPORTED_MODULE_0__[\"Component\"] {\n\n    componentDidMount() {\n        socket.on(\"connect\", () => console.log('Client: connect'));\n    }\n    sayHi() {\n        console.log('Hi');\n        socket.emit('chat message', 'Hello From Client');\n    }\n    render() {\n\n        const logosRender = logos.map((logo, index) => {\n            return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Logo___WEBPACK_IMPORTED_MODULE_1__[\"default\"], { key: index, src: logo });\n        });\n        socket.on('chat message', function (msg) {\n            console.log(msg);\n        });\n\n        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n            'div',\n            null,\n            logosRender,\n            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n                'div',\n                { className: 'hello' },\n                react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n                    'button',\n                    { onClick: this.sayHi },\n                    'Hello React!'\n                )\n            )\n        );\n    }\n}\n\n//# sourceURL=webpack:///./app/src/App.jsx?");
 
 /***/ }),
 
@@ -128,29 +128,6 @@ eval("module.exports = __webpack_require__.p + \"react.png?37fe8322b169ddbdeabf7
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("module.exports = __webpack_require__.p + \"webpack.png?77da35b51ee86c0c01bff3a48095d798\";\n\n//# sourceURL=webpack:///./app/src/assets/webpack.png?");
-
-/***/ }),
-
-/***/ "./app/src/components/Link/index.jsx":
-/*!*******************************************!*\
-  !*** ./app/src/components/Link/index.jsx ***!
-  \*******************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Link; });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var electron__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! electron */ \"electron\");\n/* harmony import */ var electron__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(electron__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles.css */ \"./app/src/components/Link/styles.css\");\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\n\nclass Link extends react__WEBPACK_IMPORTED_MODULE_0__[\"Component\"] {\n\n    link(url) {\n        electron__WEBPACK_IMPORTED_MODULE_1__[\"shell\"].openExternal(url);\n    }\n\n    render() {\n        console.log(_styles_css__WEBPACK_IMPORTED_MODULE_2___default.a);\n        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n            'a',\n            { href: '#', onClick: () => {\n                    this.link(this.props.to);\n                }, className: _styles_css__WEBPACK_IMPORTED_MODULE_2___default.a.link },\n            this.props.children\n        );\n    }\n}\n\n//# sourceURL=webpack:///./app/src/components/Link/index.jsx?");
-
-/***/ }),
-
-/***/ "./app/src/components/Link/styles.css":
-/*!********************************************!*\
-  !*** ./app/src/components/Link/styles.css ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("// removed by extract-text-webpack-plugin\nmodule.exports = {\"tone\":\"_29aw_R5k2KsQVSNBJTu7U5\",\"link\":\"_uvxNHFF_5yCj0xAzeYli _29aw_R5k2KsQVSNBJTu7U5\"};\n\n//# sourceURL=webpack:///./app/src/components/Link/styles.css?");
 
 /***/ }),
 
@@ -825,17 +802,6 @@ eval("\n\nvar alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqr
 /***/ (function(module, exports) {
 
 eval("/* (ignored) */\n\n//# sourceURL=webpack:///ws_(ignored)?");
-
-/***/ }),
-
-/***/ "electron":
-/*!***************************!*\
-  !*** external "electron" ***!
-  \***************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("module.exports = require(\"electron\");\n\n//# sourceURL=webpack:///external_%22electron%22?");
 
 /***/ })
 

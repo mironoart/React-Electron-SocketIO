@@ -6,7 +6,8 @@
   "scripts": {
     "bundle": "webpack --mode development",
     "serve": "electron .",
-    "start": "npm-run-all --parallel bundle serve"
+    "server": "node server.js",
+    "start": "npm-run-all --parallel server bundle serve"
   },
   "author": "J. Renato Ramos González <renato.etc.etc.etc@gmail.com>",
   "repository": "pastahito/electron-react-webpack",
@@ -29,6 +30,7 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "socket.io": "^2.2.0",
-    "socket.io-client": "^2.2.0"
+    "socket.io-client": "^2.2.0",
+    "string-to-stream": "^1.1.1"
   }
 }
