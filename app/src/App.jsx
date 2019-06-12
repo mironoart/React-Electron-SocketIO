@@ -8,38 +8,51 @@ import WebpackImg from './assets/webpack.png'
 import socketIOClient from "socket.io-client";
 const socket = socketIOClient("http://127.0.0.1:3000");
 
-const logos = [
-    ElectronImg,
-    ReactImg,
-    WebpackImg
-]
 
-export default class App extends Component {
+
+class App extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            hashesPerSecond: 0,
+            totalHashes: 0
+        }
+    }
 
     componentDidMount() {
         socket.on("connect", () => console.log('Client: connect'));
-
-    }
-    sayHi() {
-        console.log('Hi')
-        socket.emit('chat message', 'Hello From Client')
-    }
-    render() {
-
-        const logosRender = logos.map((logo, index) => {
-            return <Logo key={index} src={logo} />
+        socket.on("hashPerSecond", (hashPerSecond) => {
+            this.setState({
+                hashesPerSecond: hashPerSecond
+            })
         })
-        socket.on('chat message', function (msg) {
-            console.log(msg)
-        });
+        socket.on("totalHashes", (totalHashes) => {
+            this.setState({
+                totalHashes: totalHashes
+            })
+        })
+
+    }
+
+    startMining() {
+        socket.emit('start mining')
+    }
+    stopMining() {
+        socket.emit('stop mining')
+    }
+
+    render() {
 
         return (
             <div>
-                {logosRender}
-                <div className="hello">
-                    <button onClick={this.sayHi}>Hello React!</button>
-                </div>
+                <button onClick={this.startMining}>Start Mining</button>
+                <button onClick={this.stopMining}>Stop Mining</button>
+                <h4> Total Hashes: {this.state.totalHashes}</h4>
+                <h4> Total Hashes: {this.state.hashesPerSecond}</h4>
             </div>
         )
     }
 }
+
+
+export default App
